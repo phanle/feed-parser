@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'awesome_print'
 require File.join(File.dirname(__FILE__), 'feed_parser')
 
 describe FeedParser do
@@ -16,4 +14,7 @@ describe FeedParser do
     subject.root_url.should == 'http://quechoa.info'
   end
 
+  it "has multiple news items" do
+    subject.should have(3).items
+  end
 end
